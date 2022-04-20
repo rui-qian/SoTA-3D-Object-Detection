@@ -258,7 +258,9 @@ To identify the key parameters affecting the performance of detectors, we report
 
 ![1650438538164](./source/errorAnalysis.png)
 
-![errorwithgt](./source/errorwithgt.png):) Ground Truth (Green);  Prediction (Blue);  w/ gt (Red).
+![errorwithgt](./source/errorwithgt.png)
+
+:) Ground Truth (Green);  Prediction (Blue);  w/ gt (Red).
 
 [Error Analysis]( https://www.icloud.com.cn/iclouddrive/047knnJ5Rz_Z8UeXTOQN3PXrQ#Analysis): https://www.icloud.com.cn/iclouddrive/047knnJ5Rz_Z8UeXTOQN3PXrQ#Analysis
 

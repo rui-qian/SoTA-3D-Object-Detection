@@ -117,7 +117,8 @@ The availability of large-scale datasets has been continuously fostering the com
 *Interpolated ![APRN](./gif/APRN.gif) Metric* is formulated as the mean precision calculated at a recall subset R of which N evenly spaced recall levels are composed, that is 
 
 <div align=center><img src="./gif/AP.gif"/></div>  
- where ![Recall](./gif/Recall.gif).  For each recall level r, its corresponding precision is *interpolated* by taking into account the maximum precision of which recall value is greater than or equal to ![r](./gif/r.gif), denoted by 
+
+where ![Recall](./gif/Recall.gif).  For each recall level r, its corresponding precision is *interpolated* by taking into account the maximum precision of which recall value is greater than or equal to ![r](./gif/r.gif), denoted by 
 
 <div align=center><img src="./gif/p.gif"/></div>  
 

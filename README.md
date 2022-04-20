@@ -98,8 +98,8 @@ The availability of large-scale datasets has been continuously fostering the com
 **Pros and cons.** These three datasets manifested above indeed catalytically foster the academics. KITTI, as a pioneer, has profoundly influences the whole community in terms of data acquisition, protocol and benchmark. Nevertheless, as we mentioned above, KITTI is recorded in daytime on sunny days, without taking lighting and weather conditions into account, resulting a relative lower diversity compared with nuScenes and Waymo Open. Real dataset tends to suffer from class imbalance as it is true to life. According to our statistics in Table 2, 50% categories account for only 6.9% of total annotations, which clearly reflects a long-tail distribution on nuScenes. This phenomenon also holds true for KITTI as indicated in Table 3. 
 
 ![1650379714201](./source/dataset.png)
-
-| *See also:*                                                |
+*See also:*
+| Dataset                                                |
 | ---------------------------------------------------------- |
 | KITTI dataset:  http://www.cvlibs.net/datasets/kitti/      |
 | Argoverse dataset:  https://www.argoverse.org/             |

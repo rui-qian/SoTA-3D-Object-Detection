@@ -3,7 +3,6 @@
 [![GitHub issues](https://img.shields.io/github/issues/rui-qian/SoTA-3D-Object-Detection)](https://GitHub.com/rui-qian/SoTA-3D-Object-Detection/issues/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-
 # 3D Object Detection for Autonomous Driving: A Survey (Pattern Recognition 2022)
 
 This is the official repository of **3D Object Detection for Autonomous Driving: A Survey** (Pattern Recognition 2022),  a comprehensive survey with regard to 3D object detection in the context of autonomous driving. Please feel free to <a href="mailto:qianruii@126.com">contact me</a> or [create an issue](https://help.github.com/en/github/managing-your-work-on-github/creating-an-issue) on this page if you have new results to add or any suggestions!
@@ -220,7 +219,7 @@ Table 6 summarizes the 3D detection performance on the KITTI Dataset. Image base
 
 Fifteen models are selected from the surveyed works depending on whether the official source code and the corresponding pretrained parameters are available. Notice that all our experiments are conducted on KITTI dataset by directly reloading official pretrained parameters with default settings. We follow KITII protocol to evaluate on the val split for the most important Car category of moderate difficulty based on ![ap3dr11](./gif/ap3dr11.gif) metric with an IoU threshold 0.7. For the ease of reproducibility, all materials are available online: https://github.com/rui-qian/SoTA-3D-Object-Detection. 
 
-| MOdels             | Literature   | Source Code                                                  | Parameters                                                   |
+| Models             | Literature   | Source Code                                                  | Parameters                                                   |
 | ------------------ | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | SA-SSD             | CVPR'2020    | [SA-SSD](https://github.com/skyhehe123/SA-SSD)               | [GoogleDrive](https://drive.google.com/file/d/1WJnJDMOeNKszdZH3P077wKXcoty7XOUb/view?usp=sharing) |
 | PV-RCNN            | CVPR'2020    | [OpenPCDet](https://github.com/open-mmlab/OpenPCDet)         | [GoogleDrive](https://drive.google.com/file/d/1lIOq4Hxr0W3qsX83ilQv0nk1Cls6KAr-/view?usp=sharing) |
@@ -238,6 +237,7 @@ Fifteen models are selected from the surveyed works depending on whether the off
 | BADet              | PR'2022      | [BADet](https://github.com/rui-qian/BADet)                   | [icloudDrive](https://www.icloud.com.cn/iclouddrive/0c7Vb2fMO7gytSCkYZEuU8YRQ#epoch%5F50) |
 | Point-GNN          | CVPR'2020    | [Point-GNN](https://github.com/WeijingShi/Point-GNN)         | [GitHub](https://github.com/WeijingShi/Point-GNN/blob/master/checkpoints/car_auto_T3_train/model-1400000.data-00000-of-00001) |
 
+  
 ### 4.2.2. Runtime Analysis
 
 To assess the real latency of detectors, we report runtime analysis in Table 9. Instead of just citing the numbers claimed in the papers, we conduct new experiments by ourselves. We argue that it is necessary as these numbers are obtained under different hardware resources in various settings. Some of them may use Tesla P40 GPU (e.g., Fast PointRCNN [87]) whereas others may use TITAN Xp GPU (e.g., CIA-SSD [26]). Some of them may ignore the time of data processing while others may use multiple process. Hence, directly comparing against these numbers inevitably leads to controversy. By contrast, we report two versions of runtime on a single GTX 1080Ti GPU, termed as FPS<sub>default</sub>  and FPS<sub>unified</sub>. FPS<sub>default</sub>  means the numbers are obtained with official settings, which are almost consistent with the ones claimed in the papers. FPS<sub>default</sub>  reveals that our environment can reproduce the claimed results. FPS<sub>unified</sub> justifies all models in a unified criteria with 1 batch size and 4 multiple processes, fully eliminating other irrelevant factors. Table 9 indicates CIA-SSD [26] and SE-SSD [27] drop a lot under our paradigm. Considering that FLOPS is hardware independent, we also provide their FLOPS in the 2<sup>nd</sup> row that have never been reported before among existing surveys to the best of our knowledge. SE-SSD [27] shows a superior performance of speed-accuracy tradeoff, as evidenced by the 1<sup>st</sup> and 2<sup>nd</sup> rows of Table 9. 

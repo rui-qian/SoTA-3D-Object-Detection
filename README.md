@@ -35,20 +35,21 @@ author = {Rui Qian and Xin Lai and Xirong Li},
 
 # 1. INTRODUCTION
 
-![concept](./source/concept.png)
+
+  <div align=center><img src="./source/concept.png"/></div>  
 
 Dream sheds light on reality. It is a dream that autonomous vehicles hit the roads legally, functioning wisely as good as human drivers or even better, responding timely to various unconstrained driving scenarios, and being fully free of the control of human drivers, a.k.a. Level 5 wit “driver off” in Fig. 2. Let the dream be realized, thousands of new employment opportunities shall be created for those physically impaired (**Mobility**), millions of lives shall be rescued from motor vehicle-related crashes (**Safety**), and billions of dollars shall be saved from disentangling traffic accidents and treating the wounded (**Economics**). It is a reality that there is still no universal consensus on where we are now and how we shall go next. As illustrated in Fig. 2, We are largely above level 2 but under or infinitely close to level 3 by taking into account the following three social concerns: (1) **Safety and Security**. Rules and regulations are still blank,
 which shall be developed by governments to guarantee the safety for an entire trip. (2) **Law and Liability**. How to define the major responsibility and who will take that responsibility shall be identified both ethically and clearly. (3) **Acceptance**. Long-term efforts shall be made to establish the confidence and trust for the whole society, before autonomous driving can be finally accepted. This survey paper will take a structured glance at 3D object detection, one of the core techniques for autonomous driving.
 
-![level5](./source/level5.png)
+
+  <div align=center><img src="./source/level5.png"/></div>  
 
 Perception in 3D space is a prerequisite in autonomous driving. A fully understanding of what is happening right now in front of the vehicle will facilitate downstream components to react accordingly, which is exactly what 3D object detection aims for. 3D object detection perceives and describes what is surrounded us via assigning a label, how it is occupied via drawing a bounding box, and how far away it is from an ego vehicle via giving a coordinate. Besides, 3D detection even provides a heading angle that indicates orientation. It is these upstream information from perception stack that enables downstream planning model to make decisions.
 
 ## 1.1 Tasks and Challenges
 Fig. 1 presents an overview of 3D object detection task from images and point clouds. The whole goal of 3D object detection is to recognize the objects of interest by drawing an oriented 3D bounding box and assigning a label. Consider two commonly used 3D object detection modalities, i.e. images and point clouds, the key challenges of this vision task are strongly tied to the way we use, the way we represent, and the way we combine. With only images on hand, the core challenge arises from the absence of depth information. Although much progress has been made to recover depth from images [2, 3], it is still an ill-posed inverse problem. The same object in different 3D poses can result in different visual appearance in the image plane, which is not conducive to the learning of representation [4]. Besides, given that camera is passive sensor (see Sec. 2.2.1), images are naturally vulnerable to illumination (e.g., nighttime) or rainy weather conditions. With only point clouds on hand, the key difficulty stems from the representation learning. Point clouds are sparse by nature, e.g. in works [5, 6], non-empty voxels normally account for approximately 1%, 3% in a typical range setup on Waymo Open [7] dataset and KITTI [8] dataset respectively. Point clouds are irregular and unordered by nature. Directly applying convolution operator to point clouds will incur “desertion of shape information and variance to point ordering” [9]. Besides, point clouds are 2.5D in practice as they are point miss in (a), external-occlusion in (b), self-occlusion in (c) [10], as indicated in Fig. 1. Without the umbrella of convolutional neural networks, one way is to present point clouds as voxels. The dilemma is that scaling up voxel size will loss resolution and consequently degrade localization accuracy while scaling down its size will cubically increase the complexity and memory footprints as the input resolution grows. Another way is to present point clouds as point sets. Nevertheless, around 80% of runtime is occupied by point retrieval, say, ball query operation, in light of the poor memory locality [11]. With both images and point clouds on hand, the tricky obstacle often derives from semantic alignments. Images and point clouds are two heterogeneous media, presented in camera view and real 3D view, finding point-wise correspondences between LiDAR points and image pixels results in “feature blurring” [12].
 
-![1650378540384](./source/differences.png)
-
+  <div align=center><img src="./source/differences.png"/></div> 
 
 ## 1.2 Targeted Scope, Aims, and Organization
 We review literature that are closely related to 3D object detection in the context of autonomous driving. Depending on what modality we use, existing efforts are divided into the following three subdivisions: (1) **image based** [15–22], which is relatively inaccurate but several orders of magnitude cheaper, and more interpretable under the guidance of domain expertise and knowledge priors. (2) **point cloud based** [5, 6, 10, 23–29], which has a relatively higher accuracy and lower latency but more prohibitive deployment cost compared with its image based counterparts. (3) **multimodal fusion based** [12, 30–34], which currently lags behind its point cloud based counterparts but importantly provides a redundancy to fall-back onto in case of a malfunction or outage.
@@ -69,7 +70,7 @@ Let ![x](./gif/x.gif)denote input data, say, LiDAR signals or monocular images, 
  where ![y1](./gif/y1.gif) denotes a certain prediction of detector ![F(x)](./gif/F(x).gif) with bounding box ![Bi](./gif/Bi.gif) and its probabilistic score ![si](./gif/si.gif). In the context of autonomous driving, ![B](./gif/B.gif) is usually parameterized as portrayed in Fig. 4, which indicates the volume of the object of interest and its position relative to a reference coordinate system that can be one of the sensors equipped on a ego-vehicle. We notice that attributes encoded by (d) in Fig. 4 are orthogonal and therefore result in a more lower information redundancy compared with (a), (b), (c). In this paper, we adopt the form of (d) as most previous works
 [6, 24, 25, 40, 41] do. 
 
-![1650377551619](./source/corners.png)
+ <div align=center><img src="./source/corners.png"/></div>  
 
  ##  2.2. Sensors 
 
@@ -97,9 +98,10 @@ The availability of large-scale datasets has been continuously fostering the com
 
 **Pros and cons.** These three datasets manifested above indeed catalytically foster the academics. KITTI, as a pioneer, has profoundly influences the whole community in terms of data acquisition, protocol and benchmark. Nevertheless, as we mentioned above, KITTI is recorded in daytime on sunny days, without taking lighting and weather conditions into account, resulting a relative lower diversity compared with nuScenes and Waymo Open. Real dataset tends to suffer from class imbalance as it is true to life. According to our statistics in Table 2, 50% categories account for only 6.9% of total annotations, which clearly reflects a long-tail distribution on nuScenes. This phenomenon also holds true for KITTI as indicated in Table 3. 
 
-![1650379714201](./source/dataset.png)
+ <div align=center><img src="./source/dataset.png"/></div>  
+
 *See also:*
-| Dataset                                                |
+| <p align=left>Dataset </p>                                                |
 | ---------------------------------------------------------- |
 | KITTI dataset:  http://www.cvlibs.net/datasets/kitti/      |
 | Argoverse dataset:  https://www.argoverse.org/             |
@@ -136,11 +138,11 @@ where mAP indicates mean Average Precision. NDS jointly justifies a weighted ave
 
 Fig. 5 presents a pipeline of 3D object detection in general. Having only images on hand, the core challenge arises from the absence of depth information. Usually two lines exist: one is to break down this 3D vision task into 2D object detection [69–75] and depth estimation [2, 3], which lifts these estimated results into 3D space via geometric properties and constraints. The other line is to directly lift 2D image features into 3D space via computing a point cloud [41, 45, 47, 76–78], termed as Pseudo LiDAR or learning a latent depth distribution [4, 79–81]. Having only point clouds on hand, the key difficulty stems from the representation learning over sparse, irregular, and unordered point clouds.  Also two ways exist mainly: one is to first voxelize an irregular point cloud into regular voxel grids and then learn feature representations in an explicit way. Nevertheless, the other is to leverage PointNet-like block [82] or Graph Neural Networks (GNNs) [83] to learn permutation-invariant representations in an implicit fashion. Nowadays, combining the merits of these two lines reveals a new fashion trend. What if having both of them on hand? The tricky obstacle often derives from semantic representation (what to fuse), alignment (how to fuse), and consistency (when to fuse) for multimodal fusion based on what we have already learnt from these two preceding modalities. 
 
-![1650384192158](./source/pipeline.png)
+<div align=center><img src="./source/pipeline.png"/></div>  
 
 Depending on what we feed to ![F(x)](./gif/F(x).gif) internally during inference, we frame our taxonomy along three dimensions: (1) image based, (2) point cloud based, and (3) multimodal fusion based, ordered chronologically in which each method emerges. Table 5 selectively manifests several core literature structured along each dimension, which is expected to leave the readers a clear picture in his or her mind. In what follows, we present image based in Section 3.1,  and point cloud based in Section 3.2. Multimodal fusion based is addressed in Section 3.3. 
 
-![1650422733228](./source/literature.png)
+<div align=center><img src="./source/literature.png"/></div>  
 
 ## 3.1. Image based Methods 
 
@@ -154,7 +156,7 @@ Works in this group break down ![F(x)](./gif/F(x).gif) into two vision tasks: 2D
 
 Works in this group develop ![F(x)](./gif/F(x).gif) via lifting 2D image features into 3D space via computing a point cloud intermediately [41, 45, 47, 76–78] or learning a categorical depth distribution directly [4, 80]. To this end, works [41, 45, 76] first uses a stand-alone depth estimation network to obtain disparity map, then back-projects 2D coordinates associated with each pixel in image plane into 3D space, and finally lends itself to independent point cloud based detectors. Notice that the depth estimation error grows quadratically at long ranges, Pseudo-LiDAR++ [77] uses sparse but accurate real LiDAR signals as “landmarks” to correct and de-bias depth errors. Observe that preceding networks are trained separately, Pseudo-LiDAR E2E [78] goes one step further by making the entire pipeline trainable end to end. We note that Pseudo-LiDAR signals in works [41, 76, 77] are internally accompanied by noises that stem from errors in depth estimation, which reflect in two aspects: (1) Pseudo-LiDAR signals are slightly off relative to the real LiDAR ones with a local misalignment. (2) depth artifacts commonly exist in the vicinity of an object along with a long tail [41]. Works [4, 80] also point out that the independent networks, say depth estimation, make this 3D representation sub-optimal concerning the non-differentiable transformation from 2D coordinates into 3D space. Consequently, instead of computing an intermediate point cloud, the other scheme wants to incorporate 3D geometry into image based networks and learn a latent depth distribution [4, 79, 80] explicitly or implicitly [81] in an end-to-end manner. DSGN [4] and CaDNN [80] encode visual appearance into 3D feature volumes, jointly optimizing depth and semantic cues for 3D detection. LIGA-Stereo [79] turns to real LiDAR signals for the high-level geometry-aware supervisions and beyond under the guidance of a teacher network. 
 
-![1650422971088](./source/imagebased.png)
+<div align=center><img src="./source/imagebased.png"/></div> 
 
  ### 3.1.3. Summary 
 
@@ -176,7 +178,7 @@ Works in this group utilize permutation invariant operators to implicitly captur
 
 Works in this group reveal a new fashion trend to integrate the merits of both worlds together: voxel based [6, 24, 25] approaches are computationally effective but the desertion of fine-grained patterns degrades further refinement, while point based methods [40, 51, 52] have relatively higher latency but wholly preserve the irregularity and locality of a point cloud [39, 50, 53, 87, 88]. STD [50] applies PointNet++ to summarize semantic cues for sparse points, each of which is then voxelized to form a dense representation for refinement. PVRCNN [39] deeply integrates the effectiveness of 3D sparse convolution [25] and the flexible receptive fields of PointNet-like set abstraction [92] to learn more discriminative semantics. SA-SSD [53] interpolates 3D sparse convolution features for raw point clouds on which an auxiliary network is applied to endow  voxel features with structure-aware capability. BADet [88] exploits long-range interactions iteratively among detection candidates, wherein local neighborhood graphs are constructed to facilitate a boundary-aware receptive field in a coarse to-fine manner.  
 
-![1650423536265](./source/pointcloudsbased.png)
+<div align=center><img src="./source/pointcloudsbased.png"/></div> 
 
  ### 3.2.4. Summary 
 
@@ -200,7 +202,7 @@ Works in this group are decoupled from the single modality. Suppose that one of 
 
 Fig. 8 illustrates the evolution of multimodal fusion based. What to use. Consider the most commonly used sensors for autonomous driving: camera and LiDAR. Preceding works [12, 30–34, 38, 89, 90] all take images and point clouds as inputs. How to fuse. Efforts have been made to align semantics of different levels at different scales. Works [30, 31, 34, 38, 89] exploit roi-wise fusion. Works [12, 32, 33, 90] leverage point-wise fusion. When to use. Cross-modality fusion can happen at any time during the forward propagation: say early fusion [12], deep fusion [30–33, 90], and late fusion [34]. In retrospect of the evolution of this group, we notice that multimodal fusion based still lags far behind its point cloud based counterparts. We attribute the performance gap to the difficulty of semantic alignments. First, semantics from images and point clouds are heterogeneous as they are presented in different views [33] (i.e., camera view vs. real 3D view). Consequently, finding point-wise correspondences is difficult as the transformation from LiDAR points to image pixels is a many-to-one mapping and vice versa. Such an ambiguity is referred as “feature blurring” in PointPainting [12]. Second, images are arrayed in dense grids, while point clouds are distributed in sparse points. To what extent semantics are aligned by forcing these two modalities to have the same size for aggregation remains untouched. Finally, operations that we use to crop and resize features may not be as accurate as expected [34]. 
 
-![1650423930770](./source/multimodal.png)
+<div align=center><img src="./source/multimodal.png"/></div> 
 
 #  4. EVALUATION  
 
@@ -210,7 +212,7 @@ This section holds an apples-to-apples comparison of the state-of-the-arts on th
 
 Table 6 summarizes the 3D detection performance on the KITTI Dataset. Image based methods have currently trailed the performance of point clouds counterparts thus far, which should be ascribed to depth ambiguity. Point clouds based methods still predominate KITTI benchmark due to low latency and high accuracy by resorting to 3D sparse convolution. Multimodal fusion based methods are closing the gap with point clouds counterparts somewhat. As mentioned above, fusing these two modalities together is non-trivial due to view misalignment. Noticeably, on the one hand, monocular or stereo cameras indeed bring extra source information as a supplementary, which circumvent the risk of over-reliance on a single sensor. On the other hand, multiple sensors hinder the runtime and make it hard to deploy given the requirement of continuous synchronization. Table 7 and Table 8 present the 3D detection performance on the more recent nuScenes dataset and Waymo dataset, respectively. Although works that report performances on nuScenes or Waymo are not as common as KITII currently, assessing the effectiveness of detectors on these two large-scale datasets shall be necessary in the foreseeable future, regardless of dataset size or diversity as evidenced in Table 4. 
 
-![1650424583184](./source/comparisions.png)
+<div align=center><img src="./source/comparisions.png"/></div> 
 
 ## 4.2  Case Study  
 
@@ -240,7 +242,7 @@ Fifteen models are selected from the surveyed works depending on whether the off
 
 To assess the real latency of detectors, we report runtime analysis in Table 9. Instead of just citing the numbers claimed in the papers, we conduct new experiments by ourselves. We argue that it is necessary as these numbers are obtained under different hardware resources in various settings. Some of them may use Tesla P40 GPU (e.g., Fast PointRCNN [87]) whereas others may use TITAN Xp GPU (e.g., CIA-SSD [26]). Some of them may ignore the time of data processing while others may use multiple process. Hence, directly comparing against these numbers inevitably leads to controversy. By contrast, we report two versions of runtime on a single GTX 1080Ti GPU, termed as FPS<sub>default</sub>  and FPS<sub>unified</sub>. FPS<sub>default</sub>  means the numbers are obtained with official settings, which are almost consistent with the ones claimed in the papers. FPS<sub>default</sub>  reveals that our environment can reproduce the claimed results. FPS<sub>unified</sub> justifies all models in a unified criteria with 1 batch size and 4 multiple processes, fully eliminating other irrelevant factors. Table 9 indicates CIA-SSD [26] and SE-SSD [27] drop a lot under our paradigm. Considering that FLOPS is hardware independent, we also provide their FLOPS in the 2<sup>nd</sup> row that have never been reported before among existing surveys to the best of our knowledge. SE-SSD [27] shows a superior performance of speed-accuracy tradeoff, as evidenced by the 1<sup>st</sup> and 2<sup>nd</sup> rows of Table 9. 
 
-![1650424839212](./source/runtime.png)
+<div align=center><img src="./source/runtime.png"/></div> 
 
 *See also:*
 
@@ -252,13 +254,13 @@ To assess the real latency of detectors, we report runtime analysis in Table 9. 
 
 To identify the key parameters affecting the performance of detectors, we report error analysis in Table 10. As mentioned in Sec. 2.1, we adopt 7 parameters for an oriented 3D bounding box. These 7 parameters are treated equally when we regress variables. However, what mainly restricts 3D detection performance remains unexplored largely. Inspired by Monodle [21], we therefore conduct an errors analysis by replacing part of predicted 3D bounding box parameters with their corresponding ground truth values. A prediction will be assigned with a ground truth if the ratio of overlapping area exceeds a certain threshold. We set 0.6 in this paper. As shown in Table 10, we achieve a significant AP<sub>3D</sub> gain among all selected models in the 2<sup>nd</sup> row if the predicted 3D location is replaced by ground truth, where the maximum gain is 13.19%. According to Table 10, we observe that 3D location error plays the leading role of error contribution, followed by depth and 3D size error. 
 
-![1650425443222](./source/error.png)
+<div align=center><img src="./source/error.png"/></div> 
 
 *See also:*
 
-![1650438538164](./source/errorAnalysis.png)
+<div align=center><img src="./source/errorAnalysis.png"/></div> 
 
-![errorwithgt](./source/errorwithgt.png)
+<div align=center><img src="./source/errorwithgt.png"/></div>
 
 :) Ground Truth (Green);  Prediction (Blue);  w/ gt (Red).
 
@@ -270,11 +272,11 @@ please refer to https://github.com/rui-qian/BADet for installation, and run ./to
 
 To understand to what extent detectors are resilient to LiDAR sparsity, we report robustness analysis in Table 11. As mentioned in Sec. 2.2, LiDAR, typically an HDL-64E Velodyne LiDAR, is several orders of magnitude more expensive than camera, which leads to an exorbitant cost for deployment. Therefore, resorting to a less dense point cloud for 3D detection is encouraging. In this paper, we use algorithms proposed in Pseudo-LiDAR++ [77] to sparsify KITII LiDAR signals from 64 to 32, 16, 8 accordingly. As shown in Table 11, PointGNN [52], SECOND [25], 3DSSD [51] Part-A<sup>2</sup> [56], SA-SSD [53] and CIA-SSD [26] maintain a reasonable accuracy when LiDAR signals are reduced from 64 to 32. We also observe an obvious performance drop among all models when LiDAR signals are reduced from 32 to 16. 
 
-![1650425560333](./source/robustness.png)
+<div align=center><img src="./source/robustness.png"/></div>
 
 *See also:*
 
-![LiDAR_scanner_64_lines](./source/LiDAR_scanner_64_lines.png) 
+<div align=center><img src="./source/LiDAR_scanner_64_lines.png"/></div> 
 
 :) visualization of LiDAR signals (LiDAR scanner 64 lines).
 

@@ -3,7 +3,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/rui-qian/SoTA-3D-Object-Detection)](https://GitHub.com/rui-qian/SoTA-3D-Object-Detection/issues/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-# 3D Object Detection for Autonomous Driving: A Survey (Pattern Recognition 2022)
+# 3D Object Detection for Autonomous Driving: A Survey (Pattern Recognition 2022: IF=7.740)
 
 This is the official repository of **3D Object Detection for Autonomous Driving: A Survey** (Pattern Recognition 2022),  a comprehensive survey with regard to 3D object detection in the context of autonomous driving. Please feel free to <a href="mailto:qianruii@126.com">contact me</a> or [create an issue](https://help.github.com/en/github/managing-your-work-on-github/creating-an-issue) on this page if you have new results to add or any suggestions!
 For details, please refer to:

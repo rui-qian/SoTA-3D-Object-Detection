@@ -16,7 +16,7 @@ For details, please refer to:
 [\[elsevier\]](https://doi.org/10.1016/j.patcog.2022.108524)
 
 ## Citation
-If you find this code useful in your research, please consider citing our work:
+If you find this repository useful in your research, please consider citing our work:
 ```
 @inproceedings{qian_2022_survey,
 title={3D Object Detection for Autonomous Driving: A Survey}, 

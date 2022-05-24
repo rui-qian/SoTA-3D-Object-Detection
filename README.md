@@ -19,7 +19,7 @@ For details, please refer to:
 If you find this repository useful in your research, please consider citing our work:
 ```
 @inproceedings{qian_2022pr_survey,
-title={3D Object Detection for Autonomous Driving: A Survey}, 
+title={{3D} Object Detection for Autonomous Driving: A Survey}, 
 booktitle = {Pattern Recognition},
 volume = {130},
 pages = {108796},

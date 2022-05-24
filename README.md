@@ -18,10 +18,10 @@ For details, please refer to:
 ## Citation
 If you find this repository useful in your research, please consider citing our work:
 ```
-@inproceedings{qian_2022_survey,
+@inproceedings{qian_2022pr_survey,
 title={3D Object Detection for Autonomous Driving: A Survey}, 
 booktitle = {Pattern Recognition},
-volume = {xxx},
+volume = {130},
 pages = {108796},
 year = {2022},
 publisher={Elsevier},

@@ -236,7 +236,7 @@ Fifteen models are selected from the surveyed works depending on whether the off
 | CIA-SSD            | AAAI'2021    | [CIA-SSD](https://github.com/Vegeta2020/CIA-SSD)             | [GoogleDrive](https://drive.google.com/file/d/1SElYNQCsr4gctqLxmB6Fc4t7Ed8SgBgs/view?usp=sharing) |
 | SE-SSD             | CVPR'2021    | [SE-SSD](https://github.com/Vegeta2020/SE-SSD)               | [GoogleDrive](https://drive.google.com/file/d/1M2nP_bGpOy0Eo90xWFoTIUkjhdw30Pjs/view?usp=sharing) |
 | CT3D               | ICCV'2021    | [CT3D](https://github.com/hlsheng1/CT3D)                     | [GoogleDrive](https://drive.google.com/file/d/1ZWybnLJIzN4d8QBtctRJHd03sW51nrJa/view?usp=sharing) |
-| BADet              | PR'2022      | [BADet](https://github.com/rui-qian/BADet)                   | [icloudDrive](https://www.icloud.com.cn/iclouddrive/0c7Vb2fMO7gytSCkYZEuU8YRQ#epoch%5F50) |
+| BADet              | PR'2022      | [BADet](https://github.com/rui-qian/BADet)                   | [Huggingface](https://huggingface.co/datasets/rui-qian/misc/blob/main/BADet/BADet_val/epoch_50.pth) |
 | Point-GNN          | CVPR'2020    | [Point-GNN](https://github.com/WeijingShi/Point-GNN)         | [GitHub](https://github.com/WeijingShi/Point-GNN/blob/master/checkpoints/car_auto_T3_train/model-1400000.data-00000-of-00001) |
 
   
@@ -248,9 +248,9 @@ To assess the real latency of detectors, we report runtime analysis in Table 9. 
 
 *See also:*
 
-[flops_counter](https://www.icloud.com.cn/iclouddrive/074O9gmjnna99y670bl3PEGfQ#flops%5Fcounter): https://www.icloud.com.cn/iclouddrive/074O9gmjnna99y670bl3PEGfQ#flops%5Fcounter
+[flops_counter](https://huggingface.co/datasets/rui-qian/misc/blob/main/survey-3d-object-detection/code/flops_counter.py): https://huggingface.co/datasets/rui-qian/misc/blob/main/survey-3d-object-detection/code/flops_counter.py
 
-[flops_tensorflow](https://www.icloud.com.cn/iclouddrive/04fJlWckgwKfnFB5SqT8Bo7vA#flops%5Ftensorflow): https://www.icloud.com.cn/iclouddrive/04fJlWckgwKfnFB5SqT8Bo7vA#flops%5Ftensorflow
+[flops_tensorflow](https://huggingface.co/datasets/rui-qian/misc/blob/main/survey-3d-object-detection/code/flops_tensorflow.py): https://huggingface.co/datasets/rui-qian/misc/blob/main/survey-3d-object-detection/code/flops_tensorflow.py
 
  ### 4.2.3. Error Analysis
 
@@ -266,7 +266,7 @@ To identify the key parameters affecting the performance of detectors, we report
 
 :) Ground Truth (Green);  Prediction (Blue);  w/ gt (Red).
 
-[Error Analysis]( https://www.icloud.com.cn/iclouddrive/047knnJ5Rz_Z8UeXTOQN3PXrQ#Analysis): https://www.icloud.com.cn/iclouddrive/047knnJ5Rz_Z8UeXTOQN3PXrQ#Analysis
+[Error Analysis]( https://huggingface.co/datasets/rui-qian/misc/blob/main/survey-3d-object-detection/code/Analysis.zip): https://huggingface.co/datasets/rui-qian/misc/blob/main/survey-3d-object-detection/code/Analysis.zip
 
 please refer to https://github.com/rui-qian/BADet for installation, and run ./tools/test.py for reproducibility.
 
@@ -282,7 +282,7 @@ To understand to what extent detectors are resilient to LiDAR sparsity, we repor
 
 :) visualization of LiDAR signals (LiDAR scanner 64 lines).
 
-[Robustness Analysis](https://www.icloud.com.cn/iclouddrive/0f2_pfNrSX8DDAYfICYRSwTOg#kitti%5Fsparsify): https://www.icloud.com.cn/iclouddrive/0f2_pfNrSX8DDAYfICYRSwTOg#kitti%5Fsparsify
+[Robustness Analysis](https://huggingface.co/datasets/rui-qian/misc/blob/main/survey-3d-object-detection/code/kitti_sparsify.py): https://huggingface.co/datasets/rui-qian/misc/blob/main/survey-3d-object-detection/code/kitti_sparsify.py
 
 #  5. RETROSPECT AND PROSPECT 
 

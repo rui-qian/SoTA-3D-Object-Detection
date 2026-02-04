@@ -5,7 +5,7 @@
 
 # 3D Object Detection for Autonomous Driving: A Survey (Pattern Recognition 2022: IF=8.518)
 
-This is the official repository of **3D Object Detection for Autonomous Driving: A Survey** (Pattern Recognition 2022),  a comprehensive survey with regard to 3D object detection in the context of autonomous driving. Please feel free to <a href="mailto:qianruii@126.com">contact me</a> or [create an issue](https://help.github.com/en/github/managing-your-work-on-github/creating-an-issue) on this page if you have new results to add or any suggestions!
+This is the official repository of **3D Object Detection for Autonomous Driving: A Survey** (Pattern Recognition 2022),  a comprehensive survey with regard to 3D object detection in the context of autonomous driving. Please feel free to <a href="mailto:qiianruii@gmail.com">contact me</a> or [create an issue](https://help.github.com/en/github/managing-your-work-on-github/creating-an-issue) on this page if you have new results to add or any suggestions!
 For details, please refer to:
 
 **3D Object Detection for Autonomous Driving: A Survey** <br/>

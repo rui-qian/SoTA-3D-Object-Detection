@@ -10,7 +10,7 @@ For details, please refer to:
 
 **3D Object Detection for Autonomous Driving: A Survey** <br/>
 
-**Authors**: [Rui Qian]([https://github.com/rui-qian](https://scholar.google.com.hk/citations?user=z3sAW3oAAAAJ&hl=zh-CN)), [Xin Lai]([https://github.com/laiguzi](https://scholar.google.com.hk/citations?hl=zh-CN&user=dtsv4yYAAAAJ)), [Xirong Li]([https://github.com/li-xirong](https://scholar.google.com.hk/citations?hl=zh-CN&user=6m-ZQ1EAAAAJ)).
+**Authors**: [Rui Qian](https://scholar.google.com.hk/citations?user=z3sAW3oAAAAJ&hl=zh-CN), [Xin Lai](https://scholar.google.com.hk/citations?hl=zh-CN&user=dtsv4yYAAAAJ), [Xirong Li](https://scholar.google.com.hk/citations?hl=zh-CN&user=6m-ZQ1EAAAAJ).
 
 [\[arXiv\]](https://arxiv.org/abs/2106.10823)
 [\[elsevier\]](https://doi.org/10.1016/j.patcog.2022.108796)
